@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Carl John Padecio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 min-h-screen flex flex-col">
+    <div class="fixed top-0 left-0 z-[60] w-full h-1 bg-transparent" aria-hidden="true">
+        <div id="scrollProgress" class="h-full w-0 bg-amber-400 transition-[width] duration-100"></div>
+    </div>
+
+    <!-- Navbar — glass morphism style -->
+    <nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="text-2xl font-extrabold tracking-tight text-white no-underline group" href="index-local.html">
+                CJ<span class="text-amber-400 group-hover:text-amber-300 transition">.</span>
+            </a>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="index-local.html">Home</a></li>
+                <li><a class="text-amber-400 text-sm font-medium tracking-wide uppercase no-underline" href="blog-local.html">Blog</a></li>
+            </ul>
+            <!-- Mobile Toggle -->
+            <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md px-6 pb-6">
+            <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="index-local.html">Home</a></li>
+                <li><a class="text-amber-400 text-sm font-medium uppercase no-underline" href="blog-local.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Header — gradient banner -->
+    <section class="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <div class="absolute top-10 left-10 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl"></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <p class="text-amber-400 text-sm font-semibold tracking-[0.3em] uppercase mb-3">Writings & Reflections</p>
+            <h1 class="text-5xl font-extrabold text-white">My Blog</h1>
+            <p class="text-gray-400 mt-4 max-w-md mx-auto">Thoughts, learnings, and experiences as a CS student</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-20 flex-1">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="mb-10 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+                    <label class="relative block w-full md:max-w-sm">
+                        <span class="sr-only">Search posts</span>
+                        <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input id="blogSearch" type="text" placeholder="Search posts..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-100 outline-none text-sm" />
+                    </label>
+                    <div id="categoryFilters" class="flex flex-wrap gap-2">
+                        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full border border-amber-400 bg-amber-400 text-gray-900" data-filter="all">All</button>
+                        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full border border-gray-200 text-gray-600 hover:border-amber-300" data-filter="web-development">Web Development</button>
+                        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full border border-gray-200 text-gray-600 hover:border-amber-300" data-filter="student-life">Student Life</button>
+                        <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full border border-gray-200 text-gray-600 hover:border-amber-300" data-filter="projects">Projects</button>
+                    </div>
+                </div>
+                <p id="resultsCount" class="text-xs text-gray-500 mt-3">Showing 3 posts</p>
+            </div>
+
+            <div class="space-y-10">
+
+                <!-- Blog Post 1 -->
+                <article class="blog-post group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300" data-category="web-development" data-title="My Journey Into Front-End Development" data-content="HTML CSS IT 101 Arngren responsive design Bootstrap backend Python">
+                    <!-- Top accent bar -->
+                    <div class="h-1 bg-gradient-to-r from-amber-400 to-amber-300"></div>
+                    <div class="p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-amber-400 text-gray-900 rounded-full">
+                                <i class="bi bi-code-slash text-xs"></i> Web Development
+                            </span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-calendar"></i> February 20, 2026</span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-clock"></i> 3 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors duration-200">My Journey Into Front-End Development</h3>
+                        <div class="w-12 h-0.5 bg-amber-400 my-5"></div>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>When I first started learning HTML and CSS, I didn't think I would enjoy it this much.
+                                It all began in my IT 101 class where we had to revamp the Arngren website. That project
+                                really opened my eyes to how important good UI design is.</p>
+                            <p>Working on the Arngren project taught me about visual hierarchy, spacing, and making things
+                                look clean and simple. I realized that front-end development isn't just about making things
+                                look pretty — it's about making things <strong class="text-gray-800">easy to use</strong>.</p>
+                            <p>Since then, I've been learning more about responsive design using Bootstrap and exploring
+                                Python for some backend stuff. Still a long way to go, but I'm enjoying the process!</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300" data-category="student-life" data-title="Passing the Civil Service Exam" data-content="Civil Service exam student review schedule study plan college">
+                    <div class="h-1 bg-gradient-to-r from-amber-400 to-amber-300"></div>
+                    <div class="p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-amber-400 text-gray-900 rounded-full">
+                                <i class="bi bi-mortarboard text-xs"></i> Student Life
+                            </span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-calendar"></i> January 15, 2026</span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-clock"></i> 2 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors duration-200">Passing the Civil Service Exam</h3>
+                        <div class="w-12 h-0.5 bg-amber-400 my-5"></div>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>One of my proudest achievements so far was passing the Civil Service Professional Exam
+                                back in 2024. It was honestly a tough experience balancing review sessions with school work.</p>
+                            <p>I studied mostly during weekends and tried to stay consistent with my review schedule.
+                                If you're a student planning to take it, my advice is: <strong class="text-gray-800">start early and don't cram</strong>.
+                                It really helps to have a study plan.</p>
+                            <p>Getting that eligibility felt great, and it's nice to have that checked off while still in college.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-post group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300" data-category="projects" data-title="Building MySafety - A DRRMO Website Proposal" data-content="Software Engineering CSC 107 MySafety DRRMO responsive website proposal team project">
+                    <div class="h-1 bg-gradient-to-r from-amber-400 to-amber-300"></div>
+                    <div class="p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-amber-400 text-gray-900 rounded-full">
+                                <i class="bi bi-kanban text-xs"></i> Projects
+                            </span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-calendar"></i> December 5, 2025</span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-clock"></i> 4 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors duration-200">Building MySafety — A DRRMO Website Proposal</h3>
+                        <div class="w-12 h-0.5 bg-amber-400 my-5"></div>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>For our Software Engineering 2 class (CSC 107), our team worked on MySafety — a proposal
+                                for a responsive DRRMO website for the university. The goal was to help increase environmental
+                                disaster preparedness among students and staff.</p>
+                            <p>As the front-end developer, I was responsible for designing the layout and making sure
+                                the site was mobile-friendly. We used HTML, CSS, and Bootstrap for the responsive design.
+                                It was a great learning experience working with a team and going through the software
+                                development lifecycle.</p>
+                            <p>The project taught me a lot about real-world web development — from gathering requirements
+                                to actually building something that could help people.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div id="emptyState" class="hidden mt-10 text-center bg-white border border-dashed border-gray-300 rounded-2xl py-12 px-6">
+                <i class="bi bi-search text-3xl text-amber-500"></i>
+                <p class="text-gray-700 font-semibold mt-3">No posts matched your search.</p>
+                <p class="text-gray-500 text-sm mt-1">Try a different keyword or category.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-center py-6">
+        <p class="text-gray-500 text-sm">&copy; 2026 Carl John Padecio. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 hidden items-center justify-center w-11 h-11 rounded-full bg-amber-400 text-gray-900 shadow-lg shadow-amber-400/30 hover:bg-amber-300 transition" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const backToTop = document.getElementById('backToTop');
+        const searchInput = document.getElementById('blogSearch');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogPosts = document.querySelectorAll('.blog-post');
+        const resultsCount = document.getElementById('resultsCount');
+        const emptyState = document.getElementById('emptyState');
+        let activeCategory = 'all';
+        let isTicking = false;
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            navToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const updateScrollUI = () => {
+            const scrollTop = window.scrollY;
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+
+            scrollProgress.style.width = progress + '%';
+
+            if (scrollTop > 350) {
+                backToTop.classList.remove('hidden');
+                backToTop.classList.add('flex');
+            } else {
+                backToTop.classList.add('hidden');
+                backToTop.classList.remove('flex');
+            }
+        };
+
+        const applyBlogFilters = () => {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            blogPosts.forEach(post => {
+                const matchesCategory = activeCategory === 'all' || post.dataset.category === activeCategory;
+                const searchableText = (post.dataset.title + ' ' + post.dataset.content).toLowerCase();
+                const matchesSearch = !query || searchableText.includes(query);
+                const shouldShow = matchesCategory && matchesSearch;
+
+                post.classList.toggle('hidden', !shouldShow);
+                if (shouldShow) {
+                    visibleCount += 1;
+                }
+            });
+
+            resultsCount.textContent = 'Showing ' + visibleCount + (visibleCount === 1 ? ' post' : ' posts');
+            emptyState.classList.toggle('hidden', visibleCount !== 0);
+        };
+
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            navToggle.setAttribute('aria-expanded', String(!isHidden));
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && !navToggle.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        searchInput.addEventListener('input', applyBlogFilters);
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeCategory = button.dataset.filter;
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-amber-400', 'text-gray-900', 'border-amber-400');
+                    btn.classList.add('text-gray-600', 'border-gray-200');
+                });
+
+                button.classList.add('bg-amber-400', 'text-gray-900', 'border-amber-400');
+                button.classList.remove('text-gray-600', 'border-gray-200');
+                applyBlogFilters();
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (!isTicking) {
+                window.requestAnimationFrame(() => {
+                    updateScrollUI();
+                    isTicking = false;
+                });
+                isTicking = true;
+            }
+        });
+
+        updateScrollUI();
+        applyBlogFilters();
+    </script>
+</body>
+</html>

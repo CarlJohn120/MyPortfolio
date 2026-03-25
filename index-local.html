@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carl John Padecio | Personal Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <div class="fixed top-0 left-0 z-[60] w-full h-1 bg-transparent" aria-hidden="true">
+        <div id="scrollProgress" class="h-full w-0 bg-amber-400 transition-[width] duration-100"></div>
+    </div>
+
+    <!-- Navbar — glass morphism style -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="text-2xl font-extrabold tracking-tight text-white no-underline group" href="index-local.html">
+                CJ<span class="text-amber-400 group-hover:text-amber-300 transition">.</span>
+            </a>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+                <li><a class="nav-link-tw text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="#home">Home</a></li>
+                <li><a class="nav-link-tw text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="#about">About</a></li>
+                <li><a class="nav-link-tw text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="#projects">Projects</a></li>
+                <li><a class="nav-link-tw text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="#skills">Skills</a></li>
+                <li><a class="nav-link-tw text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="#contact">Contact</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="blog-local.html">Blog</a></li>
+            </ul>
+            <!-- Mobile Toggle -->
+            <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md px-6 pb-6">
+            <ul class="flex flex-col gap-4 list-none m-0 p-0">
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="#home">Home</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="#about">About</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="#projects">Projects</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="#skills">Skills</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="#contact">Contact</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="blog-local.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section — full screen gradient with decorative elements -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <!-- Decorative blobs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-amber-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <p class="text-amber-400 text-sm font-semibold tracking-[0.3em] uppercase mb-4 animate-fade-in">Welcome to my portfolio</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight animate-fade-in-up">
+                Hi, I'm<br>
+                <span class="bg-gradient-to-r from-amber-400 to-amber-300 bg-clip-text text-transparent">Carl John Padecio</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mt-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+                BS Computer Science Student · Front-End Developer
+            </p>
+            <p class="text-gray-500 mt-2 animate-fade-in-up" style="animation-delay: 0.3s;">Caraga State University (Main)</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a href="#projects" class="px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold rounded-full no-underline transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/25">
+                    View My Projects
+                </a>
+                <a href="#contact" class="px-8 py-3.5 border-2 border-white/20 hover:border-amber-400 text-white hover:text-amber-400 font-semibold rounded-full no-underline transition-all duration-300">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="bi bi-chevron-double-down text-white/40 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section — asymmetric layout -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left: decorative block -->
+                <div class="w-full lg:w-5/12 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl rotate-6 shadow-2xl"></div>
+                        <div class="absolute inset-0 w-64 h-64 md:w-80 md:h-80 bg-gray-900 rounded-2xl -rotate-3 flex items-center justify-center shadow-2xl">
+                            <div class="text-center text-white p-8">
+                                <img src="profile.jpg" alt="Carl John profile photo" style="width: 200px; height: 200px;" class="rounded-full object-cover border-4 border-amber-400/80 mx-auto shadow-lg shadow-amber-500/20">
+                                <p class="text-amber-400 font-bold text-lg mt-5">Carl John</p>
+                                <p class="text-gray-400 text-sm">CS Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: content -->
+                <div class="w-full lg:w-7/12">
+                    <p class="text-amber-500 font-semibold tracking-widest uppercase text-sm mb-2">About Me</p>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Passionate about building <span class="text-amber-500">great experiences</span></h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">Hello! I'm <span class="font-semibold text-gray-800">Carl John Padecio</span>, a BS Computer Science student at
+                        <span class="font-semibold text-gray-800">Caraga State University (Main)</span>, currently in my senior years (2021 - Present).
+                        I enjoy building websites and working on front-end development projects. I'm passionate about
+                        creating clean, user-friendly interfaces.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4">I'm also a <span class="font-semibold text-gray-800">Civil Service Eligible</span> professional passer (2024). Outside of coding,
+                        I like solving problems and learning new technologies.</p>
+                    <div class="flex items-center gap-2 text-gray-500 mt-6">
+                        <i class="bi bi-geo-alt-fill text-amber-500"></i>
+                        <span>Purok 7a, Poblacion Bayugan City</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certificate — timeline style -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-amber-500 font-semibold tracking-widest uppercase text-sm mb-2">Background</p>
+                <h2 class="text-4xl font-extrabold text-gray-900">Education & Certificate</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Education -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-amber-200">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-300 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">
+                        <i class="bi bi-mortarboard-fill text-2xl text-amber-500"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-gray-900 mb-1">Education</h5>
+                    <h6 class="font-semibold text-gray-700 mt-4">Bachelor of Science in Computer Science</h6>
+                    <p class="text-gray-500 text-sm mt-1">Caraga State University (Main)</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-600 rounded-full">2021 - Present</span>
+                </div>
+                <!-- Certificate -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-amber-200">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-300 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">
+                        <i class="bi bi-award-fill text-2xl text-amber-500"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-gray-900 mb-1">Certificate</h5>
+                    <h6 class="font-semibold text-gray-700 mt-4">Civil Service Eligible</h6>
+                    <p class="text-gray-500 text-sm mt-1">CS Professional Passer</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-600 rounded-full">2024</span>
+                </div>
+
+                <!-- New Certificate (Clickable to Modal) -->
+                <div onclick="document.getElementById('certModal').classList.remove('hidden')" class="cursor-pointer group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-amber-200">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-300 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">
+                        <i class="bi bi-award-fill text-2xl text-amber-500"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-gray-900 mb-1">Certificate</h5>
+                    <h6 class="font-semibold text-gray-700 mt-4">C Intermediate</h6>
+                    <p class="text-gray-500 text-sm mt-1">Sololean</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-600 rounded-full">2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section — modern card layout -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-amber-500 font-semibold tracking-widest uppercase text-sm mb-2">Portfolio</p>
+                <h2 class="text-4xl font-extrabold text-gray-900">Academic Projects</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                    <!-- Project Screenshot -->
+                    <div class="bg-gray-100 relative overflow-hidden">
+                        <img src="arngren.png" alt="Arngren Website Redesign" class="w-full h-auto object-contain">
+                        <div class="absolute inset-0 bg-amber-400/0 group-hover:bg-amber-400/10 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block text-xs font-bold px-3 py-1 bg-amber-400 text-gray-900 rounded-full mb-3">Front-End Developer</span>
+                        <h5 class="text-xl font-bold text-gray-900">Arngren</h5>
+                        <p class="text-gray-400 text-sm mt-1">IT 101 · Human Computer Interaction · 2024</p>
+                        <p class="text-gray-600 mt-3 text-sm leading-relaxed">Revamped the Arngren website interface to align with modern UI standards,
+                            focusing on hierarchy, aesthetics, and ease of use.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                    <!-- Project Screenshot -->
+                    <div class="bg-gray-100 relative overflow-hidden">
+                        <img src="mysafety.png" alt="MySafety DRRMO Website" class="w-full h-auto object-contain">
+                        <div class="absolute inset-0 bg-amber-400/0 group-hover:bg-amber-400/10 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block text-xs font-bold px-3 py-1 bg-amber-400 text-gray-900 rounded-full mb-3">Front-End Developer</span>
+                        <h5 class="text-xl font-bold text-gray-900">MySafety</h5>
+                        <p class="text-gray-400 text-sm mt-1">CSC 107 · Software Engineering 2 · 2025</p>
+                        <p class="text-gray-600 mt-3 text-sm leading-relaxed">Designed a proposal for a responsive DRRMO website aimed at increasing
+                            environmental disaster preparedness across the university.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                    <!-- Project Screenshot -->
+                    <div class="bg-gray-100 relative overflow-hidden">
+                        <img src="sample.png" alt="Sample Project" class="w-full h-auto object-contain">
+                        <div class="absolute inset-0 bg-amber-400/0 group-hover:bg-amber-400/10 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block text-xs font-bold px-3 py-1 bg-amber-400 text-gray-900 rounded-full mb-3">UI/UX Designer</span>
+                        <h5 class="text-xl font-bold text-gray-900">TourMe</h5>
+                        <p class="text-gray-400 text-sm mt-1">CSC 106 · Software Engineering 1 · 2024</p>
+                        <p class="text-gray-600 mt-3 text-sm leading-relaxed">Designed a sample project demonstrating technical capabilities and modern design principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section — icon-forward design with hover effects -->
+    <section id="skills" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-amber-500 font-semibold tracking-widest uppercase text-sm mb-2">Expertise</p>
+                <h2 class="text-4xl font-extrabold text-gray-900">Skills</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Technical Skills -->
+                <div class="group bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-amber-200/50">
+                        <i class="bi bi-code-slash text-2xl text-white"></i>
+                    </div>
+                    <h5 class="font-bold text-lg text-gray-900">Technical Skills</h5>
+                    <div class="w-10 h-0.5 bg-amber-400 mx-auto my-4"></div>
+                    <ul class="list-none p-0 space-y-2 text-gray-600 text-sm">
+                        <li>UI/UX Designer</li>
+                        <li>Python, HTML/CSS</li>
+                        <li>GitHub, VS Code</li>
+                    </ul>
+                </div>
+                <!-- Soft Skills -->
+                <div class="group bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-amber-200/50">
+                        <i class="bi bi-people-fill text-2xl text-white"></i>
+                    </div>
+                    <h5 class="font-bold text-lg text-gray-900">Soft Skills</h5>
+                    <div class="w-10 h-0.5 bg-amber-400 mx-auto my-4"></div>
+                    <ul class="list-none p-0 space-y-2 text-gray-600 text-sm">
+                        <li>Management Skills</li>
+                        <li>Problem Solving</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+                <!-- Languages -->
+                <div class="group bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-amber-200/50">
+                        <i class="bi bi-translate text-2xl text-white"></i>
+                    </div>
+                    <h5 class="font-bold text-lg text-gray-900">Languages</h5>
+                    <div class="w-10 h-0.5 bg-amber-400 mx-auto my-4"></div>
+                    <ul class="list-none p-0 space-y-2 text-gray-600 text-sm">
+                        <li>English</li>
+                        <li>Filipino</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section — dark background contrast -->
+    <section id="contact" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-amber-400/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-amber-400 font-semibold tracking-widest uppercase text-sm mb-2">Get In Touch</p>
+                <h2 class="text-4xl font-extrabold text-white">Contact Me</h2>
+            </div>
+            <div class="max-w-xl mx-auto">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="copy-card bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-amber-400/30 transition-all duration-300 cursor-pointer" data-copy="09641132201" data-copy-label="Phone number">
+                        <i class="bi bi-telephone-fill text-amber-400 text-xl"></i>
+                        <p class="text-gray-400 text-xs uppercase tracking-wide mt-3 mb-1">Phone</p>
+                        <p class="text-white font-medium">09641132201</p>
+                    </div>
+                    <div class="copy-card bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-amber-400/30 transition-all duration-300 cursor-pointer" data-copy="cj.pads120@gmail.com" data-copy-label="Personal email">
+                        <i class="bi bi-envelope-fill text-amber-400 text-xl"></i>
+                        <p class="text-gray-400 text-xs uppercase tracking-wide mt-3 mb-1">Email</p>
+                        <p class="text-white font-medium text-sm">cj.pads120@gmail.com</p>
+                    </div>
+                    <div class="copy-card bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-amber-400/30 transition-all duration-300 cursor-pointer" data-copy="carljohn.padecio@carsu.edu.ph" data-copy-label="School email">
+                        <i class="bi bi-envelope-fill text-amber-400 text-xl"></i>
+                        <p class="text-gray-400 text-xs uppercase tracking-wide mt-3 mb-1">School Email</p>
+                        <p class="text-white font-medium text-sm">carljohn.padecio@carsu.edu.ph</p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-amber-400/30 transition-all duration-300">
+                        <i class="bi bi-geo-alt-fill text-amber-400 text-xl"></i>
+                        <p class="text-gray-400 text-xs uppercase tracking-wide mt-3 mb-1">Address</p>
+                        <p class="text-white font-medium text-sm">Purok 7a, Poblacion Bayugan City</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer — minimal -->
+    <footer class="bg-gray-950 text-center py-6">
+        <p class="text-gray-500 text-sm">&copy; 2026 Carl John Padecio. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 hidden items-center justify-center w-11 h-11 rounded-full bg-amber-400 text-gray-900 shadow-lg shadow-amber-400/30 hover:bg-amber-300 transition" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div id="copyToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] bg-gray-900 text-white text-sm px-4 py-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300" role="status" aria-live="polite"></div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const navLinks = document.querySelectorAll('.nav-link-tw');
+        const sections = document.querySelectorAll('section[id]');
+        const backToTop = document.getElementById('backToTop');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const copyCards = document.querySelectorAll('.copy-card');
+        const copyToast = document.getElementById('copyToast');
+        let isTicking = false;
+        let toastTimer;
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            navToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const showToast = (message) => {
+            copyToast.textContent = message;
+            copyToast.classList.remove('opacity-0');
+            copyToast.classList.add('opacity-100');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                copyToast.classList.remove('opacity-100');
+                copyToast.classList.add('opacity-0');
+            }, 1800);
+        };
+
+        const copyText = async (value, label) => {
+            try {
+                await navigator.clipboard.writeText(value);
+                showToast(label + ' copied');
+            } catch (error) {
+                const textArea = document.createElement('textarea');
+                textArea.value = value;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast(label + ' copied');
+            }
+        };
+
+        const updateScrollUI = () => {
+            const scrollTop = window.scrollY;
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+
+            scrollProgress.style.width = progress + '%';
+
+            if (scrollTop > 50) {
+                navbar.classList.add('bg-gray-900/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-gray-900/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+
+            if (scrollTop > 500) {
+                backToTop.classList.remove('hidden');
+                backToTop.classList.add('flex');
+            } else {
+                backToTop.classList.add('hidden');
+                backToTop.classList.remove('flex');
+            }
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (scrollTop >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('!text-amber-400');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('!text-amber-400');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!isTicking) {
+                window.requestAnimationFrame(() => {
+                    updateScrollUI();
+                    isTicking = false;
+                });
+                isTicking = true;
+            }
+        });
+
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            navToggle.setAttribute('aria-expanded', String(!isHidden));
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && !navToggle.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        copyCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const value = card.dataset.copy;
+                const label = card.dataset.copyLabel || 'Value';
+                copyText(value, label);
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        updateScrollUI();
+    </script>
+    <!-- Certificate Modal -->
+    <div id="certModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-center items-center px-4 transition-all duration-300">
+        <div class="relative bg-white rounded-2xl w-full max-w-3xl shadow-2xl p-6">
+            <button onclick="document.getElementById('certModal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Certificate</h3>
+            <div class="flex justify-center border border-gray-100 rounded-xl overflow-hidden bg-gray-50 p-2">
+                <img src="c.png" alt="Certificate" class="max-h-[70vh] w-auto object-contain rounded-lg shadow-sm">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
