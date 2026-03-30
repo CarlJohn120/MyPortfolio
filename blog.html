@@ -30,13 +30,13 @@
     <!-- Navbar — glass morphism style -->
     <nav class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md shadow-lg">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a class="text-2xl font-extrabold tracking-tight text-white no-underline group" href="index-local.html">
+            <a class="text-2xl font-extrabold tracking-tight text-white no-underline group" href="index.html">
                 CJ<span class="text-amber-400 group-hover:text-amber-300 transition">.</span>
             </a>
             <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
-                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="index-local.html">Home</a></li>
-                <li><a class="text-amber-400 text-sm font-medium tracking-wide uppercase no-underline" href="blog-local.html">Blog</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium tracking-wide uppercase no-underline transition-colors duration-200" href="index.html">Home</a></li>
+                <li><a class="text-amber-400 text-sm font-medium tracking-wide uppercase no-underline" href="blog.html">Blog</a></li>
             </ul>
             <!-- Mobile Toggle -->
             <button id="navToggle" class="md:hidden text-white text-2xl focus:outline-none">
@@ -46,8 +46,8 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-md px-6 pb-6">
             <ul class="flex flex-col gap-4 list-none m-0 p-0">
-                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="index-local.html">Home</a></li>
-                <li><a class="text-amber-400 text-sm font-medium uppercase no-underline" href="blog-local.html">Blog</a></li>
+                <li><a class="text-white/80 hover:text-amber-400 text-sm font-medium uppercase no-underline transition" href="index.html">Home</a></li>
+                <li><a class="text-amber-400 text-sm font-medium uppercase no-underline" href="blog.html">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -80,7 +80,7 @@
                         <button class="filter-btn px-3 py-1.5 text-xs font-semibold rounded-full border border-gray-200 text-gray-600 hover:border-amber-300" data-filter="projects">Projects</button>
                     </div>
                 </div>
-                <p id="resultsCount" class="text-xs text-gray-500 mt-3">Showing 3 posts</p>
+                <p id="resultsCount" class="text-xs text-gray-500 mt-3">Showing 4 posts</p>
             </div>
 
             <div class="space-y-10">
@@ -159,6 +159,27 @@
                                 development lifecycle.</p>
                             <p>The project taught me a lot about real-world web development — from gathering requirements
                                 to actually building something that could help people.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-post group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-amber-200 transition-all duration-300" data-category="projects" data-title="Designing a Traveler Booking Platform" data-content="Software Engineering 1 CSC 106 TourMe booking platform travelers UX research wireframes figma front-end">
+                    <div class="h-1 bg-gradient-to-r from-amber-400 to-amber-300"></div>
+                    <div class="p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-amber-400 text-gray-900 rounded-full">
+                                <i class="bi bi-kanban text-xs"></i> Projects
+                            </span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-calendar"></i> March 10, 2024</span>
+                            <span class="text-gray-400 text-xs flex items-center gap-1"><i class="bi bi-clock"></i> 3 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors duration-200">Designing a Booking Platform for Travelers</h3>
+                        <div class="w-12 h-0.5 bg-amber-400 my-5"></div>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>For Software Engineering 1 (CSC 106), I led the UI design for a traveler-focused booking platform. We wanted students and backpackers to quickly compare itineraries, reserve stays, and get curated tips without hopping between multiple tabs.</p>
+                            <p>The sprint started with user interviews and simple journey maps to understand what stresses travelers the most. From there I built low-fidelity wireframes in Figma.</p>
+                            <p>This project pushed me to balance clean visuals with complex booking data. It also set the foundation for growing TourMe into a more complete travel companion in future iterations.</p>
                         </div>
                     </div>
                 </article>
